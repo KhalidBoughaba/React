@@ -16,12 +16,18 @@
     <script type="text/babel">
 
     class App extends React.Component{
+
+        state = {
+            name:'App component',
+        }
+
         render(){
             return(
                 <div>
-                    <Header />
-                    <Content />
-                    <Footer />
+                    <h1>{this.state.name}</h1>
+                    <Header title='This is prop Header'/>
+                    <Content khalid='This is prop content khalid'/>
+                    <Footer elzero='This is prop Footer'/>
                 </div>
             )
         }
@@ -29,27 +35,42 @@
     
     //Header component
     class Header extends React.Component{
+
+        zero = {
+            name:'This is state Header(zero)'
+        }
+
         render(){
             return(
-                <header>Header</header>
+                <header>{this.props.title} and {this.zero.name}</header>
             )
         }
     }
 
     //Content Component
     class Content extends React.Component{
+
+        state = {
+            name:'This is state content'
+        }
+
         render(){
             return(
-                <main>Content</main>
+                <main>{this.props.khalid} and {this.state.name}</main>
             )
         }
     }
 
     //Footer Component
     class Footer extends React.Component{
+
+        state = {
+            name:'This is state Footer'
+        }
+
         render(){
             return(
-                <footer>Footer</footer>
+                <footer>{this.props.elzero} and {this.state.name}</footer>
             )
         }
     }
