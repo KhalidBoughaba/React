@@ -28,6 +28,7 @@
                     <Header title='This is prop Header'/>
                     <Content khalid='This is prop content khalid'/>
                     <Footer elzero='This is prop Footer'/>
+                    <Child name='function'/>
                 </div>
             )
         }
@@ -73,6 +74,14 @@
                 <footer>{this.props.elzero} and {this.state.name}</footer>
             )
         }
+    }
+
+    //Child Component use function
+    function Child(props){
+
+        return(
+            <p>This is {props.name}</p>
+        )
     }
 
     ReactDOM.render(<App />,document.getElementById('app'))
