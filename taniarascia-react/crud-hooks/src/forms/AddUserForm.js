@@ -13,7 +13,9 @@ const AddUserForm = (props) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (!user.name || !user.username) return props.addUser(user);
+        if (!user.name || !user.username) return;
+
+        props.addUser(user);
         setUser(initialFormState);
       }}
     >

@@ -12,8 +12,8 @@ const UserTable = (props) => (
       {props.users.length > 0 ? (
         props.users.map((user) => (
           <tr key={user.id}>
-            <td>Name data</td>
-            <td>UserName data</td>
+            <td>{user.name}</td>
+            <td>{user.username}</td>
             <td>
               <button
                 onClick={() => {props.editRow(user)}}

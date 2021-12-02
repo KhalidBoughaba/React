@@ -9,24 +9,35 @@ function App() {
     { id: 2, name: "anas", username: "anasSalmon" },
     { id: 3, name: "omar", username: "omarAjbar" },
   ];
+
+  const initialFormState = { id: null, name: "", username: "" };
+  
+  // Setting state
   const [users, setUsers] = useState(usersData);
+  const [currentUser, setCurrentUser] = useState(initialFormState);
+
+  const [editing, setEditing] = useState(false);
+
+  // CRUD operations
   const addUser = (user) => {
     user.id = users.length + 1;
     setUsers([...users, user]);
   };
+
   const deleteUser = (id) => {
+    setEditing(false);
     setUsers(users.filter((user) => user.id !== id));
   };
-  const [editing, setEditing] = useState(false);
-  const initialFormState = { id: null, name: "", username: "" };
-  const [currentUser, setCurrentUser] = useState(initialFormState);
-  const editRow = (user) => {
-    setEditing(true);
-    setCurrentUser({ id: user.id, name: user.name, username: user.username });
-  };
+
+
   const updateUser = (id, updatedUser) => {
     setEditing(false);
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
+  };
+
+  const editRow = (user) => {
+    setEditing(true);
+    setCurrentUser({ id: user.id, name: user.name, username: user.username });
   };
   return (
     <div className="container">
