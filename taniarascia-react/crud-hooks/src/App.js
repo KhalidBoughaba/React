@@ -11,9 +11,10 @@ function App() {
   ];
 
   const initialFormState = { id: null, name: "", username: "" };
-  
+
   // Setting state
   const [users, setUsers] = useState(usersData);
+  
   const [currentUser, setCurrentUser] = useState(initialFormState);
 
   const [editing, setEditing] = useState(false);
