@@ -1,0 +1,22 @@
+.cardUser {
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.btnDelete {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
