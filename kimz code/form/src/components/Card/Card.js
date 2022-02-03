@@ -1,12 +1,11 @@
-import React, { Fragment } from "react";
-import styles from "./Card.module.css";
+import React from "react";
+import styles from "./Card.module.css"; 
 
-const Card = ({ nameList, type, deleteHandler }) => {
-  const cards = nameList.map(({ Name, Age, Address, Phone }, indx) => (
+const Card = ({ id, Name, Age, Address, Phone, type, deleteHandler }) => {
+  return (
     <div
-      className={(styles.cardUser)}
-      key={indx}
-      style={{ backgroundColor: type === "boys" ? "#87dfe9" : "pink" }}
+      className={styles.cardUser}
+      style={{ backgroundColor: type === "boy" ? "#87dfe9" : "pink" }}
     >
       <h3>Name : {Name}</h3>
       <h3>Age : {Age}</h3>
@@ -14,16 +13,11 @@ const Card = ({ nameList, type, deleteHandler }) => {
       <h3>Phone: {Phone}</h3>
       <button
         className={styles.btnDelete}
-        onClick={(e) => deleteHandler(e, indx)}
+        onClick={(e) => deleteHandler(e, id)}
       >
         X
       </button>
     </div>
-  ));
-  return (
-    <Fragment>
-      <div>{cards}</div>
-    </Fragment>
   );
 };
 

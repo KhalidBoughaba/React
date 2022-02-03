@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Filter.module.css";
 
-const Filter = () => {
+const Filter = ({ filtertion }) => {
   const [filter, setFilter] = useState("");
   const filterHandler = (e) => {
-      const name = e.target.value;
-          setFilter(name);
-    console.log(name);
+    const name = e.target.value;
+    setFilter(name);
+    filtertion(name);
   };
   return (
     <div className={styles.input}>
@@ -16,8 +16,6 @@ const Filter = () => {
         value={filter}
         onChange={filterHandler}
       />
-
-      <button onClick={onclick}>click Me</button>
     </div>
   );
 };
